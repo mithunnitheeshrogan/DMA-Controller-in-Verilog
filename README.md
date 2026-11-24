@@ -151,15 +151,6 @@ vlog memory.v dma_controller.v tb_dma.v
 vsim -c work.tb_dma -do "run -all; quit"
 ```
 
-### Icarus Verilog (optional)
-
-```bash
-iverilog -g2005 -o sim memory.v dma_controller.v tb_dma.v
-vvp sim
-```
-
----
-
 ## Verification
 
 The testbench is **self-checking** and contains:
@@ -194,12 +185,6 @@ PASS : T8 irq cleared by CLR
 ==== ALL TESTS PASSED ====
 ```
 
-Compiled and simulated with ModelSim Intel FPGA Edition 10.5b: 0 errors, 0 warnings.
-
-> Add your waveform screenshot here, for example `docs/waveform.png`:
-> `![DMA waveform](docs/waveform.png)`
-
----
 
 ## Parameters
 
@@ -211,28 +196,11 @@ Compiled and simulated with ModelSim Intel FPGA Edition 10.5b: 0 errors, 0 warni
 
 ---
 
-## Limitations
-
-- The grant is checked at word boundaries only; a grant revoked in the middle of a word is not handled.
-- Overlapping source and destination regions are not supported (simple forward copy).
-- Single channel, memory-to-memory only.
-
-## Possible Extensions
-
-- Multi-channel support with a priority arbiter
-- Scatter-gather / descriptor-based transfers
-- Backward copy for overlapping regions
-- Mid-word grant revocation with a resume state
-- Peripheral handshake (DREQ / DACK) for memory-to-peripheral transfers
-
----
 
 ## Tools
 
 - Verilog-2001
-- ModelSim Intel FPGA Edition 10.5b
-- Icarus Verilog (cross-check)
+- ModelSim 
 
-## License
 
-MIT (or your choice).
+MITHUN NITHEESH ROGAN R
